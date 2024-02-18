@@ -27,7 +27,7 @@ func SetSettingHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	timeout := values.Get("timeout")
+	timeout := values.Get("setting")
 	if timeout == "" {
 		http.Error(w, "Missing 'timeout' parameter in request body", http.StatusBadRequest)
 		return
