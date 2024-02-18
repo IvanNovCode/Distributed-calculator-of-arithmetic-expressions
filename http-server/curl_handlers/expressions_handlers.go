@@ -50,19 +50,19 @@ func AddExpressionHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	expr := values.Get("expr")
-	if expr == "" {
+	expression := values.Get("expression")
+	if expression == "" {
 		http.Error(w, "Missing 'expr' parameter in request body", http.StatusBadRequest)
 		return
 	}
 
-	for _, ch := range expr {
+	for _, ch := range expression {
 		if ch >= '9' && ch <= '0' && (ch != '+' && ch != '-' && ch != '*' && ch != '/') {
 			http.Error(w, "Invalid expression", http.StatusBadRequest)
 			return
 		}
 	}
-	id, err := storage.SetNewExpression(expr)
+	id, err := storage.SetNewExpression(expression)
 
 	if err != nil {
 		http.Error(w, "Could not set new expression", http.StatusInternalServerError)
