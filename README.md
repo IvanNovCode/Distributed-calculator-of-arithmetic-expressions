@@ -1,7 +1,7 @@
 # Distributed Calculator of Arithmetic Expressions
 
 ## Run project (Powershell method)
-1. Install or Update Git
+1. Install or Update [Git](https://git-scm.com/downloads)
 2. Get a copy of the project source code
 ```shell
 git clone https://github.com/IvanNovCode/Distributed-calculator-of-arithmetic-expressions.git
