@@ -19,7 +19,7 @@ go run .\cmd\agent\main.go
 go run .\cmd\orchestrator\main.go
 ```
 
-## Request example
+## Request examples
 Create a new expression
 ```sh
 curl -X POST --data-urlencode "expression=2+2*2" http://localhost:8080/addexpression
