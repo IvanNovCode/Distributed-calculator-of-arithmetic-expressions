@@ -6,11 +6,15 @@
 ```shell
 git clone https://github.com/IvanNovCode/Distributed-calculator-of-arithmetic-expressions.git
 ```
-3. Run agent
+3. Change directory
+```sh
+cd .\Distributed-calculator-of-arithmetic-expressions
+```
+4. Run agent
 ```sh
 go run .\cmd\agent\main.go
 ```
-4. Run orchestrator
+5. Run orchestrator
 ```sh
 go run .\cmd\orchestrator\main.go
 ```
