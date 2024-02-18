@@ -27,19 +27,19 @@ func SetSettingHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	timeout := values.Get("setting")
-	if timeout == "" {
-		http.Error(w, "Missing 'timeout' parameter in request body", http.StatusBadRequest)
+	setting := values.Get("setting")
+	if setting == "" {
+		http.Error(w, "Missing 'setting' parameter in request body", http.StatusBadRequest)
 		return
 	}
 
-	if err := storage.SetNewSetting(timeout); err != nil {
+	if err := storage.SetNewSetting(setting); err != nil {
 		http.Error(w, "Could not set new expression", http.StatusInternalServerError)
 		return
 	}
 
 	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte("Timeout added successfully"))
+	w.Write([]byte("Setting set successfully"))
 }
 
 func GetSettingsHandler(w http.ResponseWriter, r *http.Request) {
